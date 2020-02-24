@@ -9,9 +9,12 @@ public class PlayerController : MonoBehaviour
     public float speed; //this will show up in the inspector as speed
     public Text countText;
     public Text winText;
+    public int countfix;
+    
 
     private Rigidbody rb;
     private int count;
+
     void Start()
     {
         rb = GetComponent<Rigidbody> ();
@@ -42,7 +45,8 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 13)
+ 
+        if (count == countfix)
         {
             winText.text = "You Win!";
         }
